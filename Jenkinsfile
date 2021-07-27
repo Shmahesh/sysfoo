@@ -10,8 +10,11 @@ pipeline{
       steps{
         echo 'step test'
       }
+    }
       stage("package"){
       steps{
         echo 'step package'
       }
       }
+  }
+}
