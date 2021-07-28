@@ -17,6 +17,9 @@ pipeline {
         docker {
           image 'maven:3.6.3-jdk-11-slim'
         }
+        when{
+          branch 'master'
+        }
 
       }
       steps {
