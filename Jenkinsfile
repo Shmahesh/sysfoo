@@ -1,11 +1,11 @@
 pipeline {
-  
-  stages {
-    stage('build') {
-      agent {
+   agent {
     docker {
       image 'maven:3.6.3-jdk-11-slim'
     }
+  stages {
+    stage('build') {
+    
 
   }
       steps {
@@ -14,13 +14,14 @@ pipeline {
     }
 
     stage('test') {
+      when{
+          branch 'master'
+        }
       agent {
         docker {
           image 'maven:3.6.3-jdk-11-slim'
         }
-        when{
-          branch 'master'
-        }
+        
 
       }
       steps {
