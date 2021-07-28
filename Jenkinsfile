@@ -1,12 +1,13 @@
 pipeline {
-  agent {
+  
+  stages {
+    stage('build') {
+      agent {
     docker {
       image 'maven:3.6.3-jdk-11-slim'
     }
 
   }
-  stages {
-    stage('build') {
       steps {
         echo 'step build'
       }
